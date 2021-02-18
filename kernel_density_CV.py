@@ -1,5 +1,6 @@
 # https://jakevdp.github.io/blog/2013/12/01/kernel-density-estimation/
 # https://github.com/opendifferentialprivacy/smartnoise-sdk/blob/50f223161242d135d495ec39618414fd2ca104ed/sdk/opendp/smartnoise/evaluation/evaluator/_dp_evaluator.py#L272
+# https://www.r-bloggers.com/2014/10/cross-validation-for-kernel-density-estimation/
 
 # what we need
 # input: a vector of data, a specific interval
@@ -42,7 +43,6 @@ h_default = 1.06 * np.std(x) * len(x)**(-1/5)
 #
 kde = KernelDensity(kernel='gaussian', bandwidth=h_default).fit(x[:,None])
 # add None to make it 2D
-
 #
 # log_density = kde.score_samples(x[:3])
 # figure out the log_density at a particular time point
